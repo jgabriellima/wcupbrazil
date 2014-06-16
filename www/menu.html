@@ -1,0 +1,57 @@
+<ons-navigator title="WCup Brazil">
+    <ons-page title="WCup Brazil">
+        <ons-navigator-toolbar title="WCup Brazil"></ons-navigator-toolbar>
+
+        <div class="grid-menu-scroller" style="background-image:url('assets/img/bg.jpg');background-repeat: no-repeat;background-position: center;background-size: cover;">
+            <div class="grid-menu">
+                <div class="grid-menu-3items-row centering-and-alignment">
+                    <div class="grid-menu-item list__item--tappable" ng-click="ons.navigator.pushPage('groups.html')">
+                        <i class="fa fa-bars"></i>
+                        <div class="grid-menu-item-label">Groups</div>
+                    </div>
+
+                    <div class="grid-menu-item list__item--tappable" ng-click="ons.navigator.pushPage('teams.html')">
+                        <i class="fa fa-users"></i>
+                        <div class="grid-menu-item-label">Teams</div>
+                    </div>
+                    <div class="grid-menu-item list__item--tappable" ng-click="ons.navigator.pushPage('players.html')">
+                        <i class="fa fa-user"></i>
+                        <div class="grid-menu-item-label">Players</div>
+                    </div>
+
+                </div>
+                <div class="grid-menu-3items-row centering-and-alignment">
+                    <div class="grid-menu-item list__item--tappable" ng-click="ons.navigator.pushPage('stats.html')">
+                        <i class="fa fa-bar-chart-o"></i>
+                        <div class="grid-menu-item-label">Stats</div>
+                    </div>
+                    <div class="grid-menu-item list__item--tappable" ng-click="ons.navigator.pushPage('matches.html')">
+                        <i class="fa fa-tasks"></i>
+                        <div class="grid-menu-item-label">Matches</div>
+                    </div>
+                    <div class="grid-menu-item list__item--tappable" ng-click="ons.navigator.pushPage('clubs.html')">
+                        <i class="fa fa-cubes"></i>
+                        <div class="grid-menu-item-label">Clubs</div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+        </div>
+        <div class="tab-bar">
+            <label class="tab-bar__item">
+                <input type="radio" name="tab-bar-b" checked="checked">
+                <button class="tab-bar__button">
+                    <i class="tab-bar__icon fa fa-2x fa-home"></i>
+                    <div class="tab-bar__label">HOME</div>
+                </button>
+            </label>
+            <label class="tab-bar__item">
+                <input type="radio" name="tab-bar-b">
+                <button class="tab-bar__button" ng-click="ons.navigator.pushPage('clubs.html')">
+                    <i class="tab-bar__icon fa fa-2x fa-usd"></i>
+                    <div class="tab-bar__label">BigBall's</div>
+                </button>
+            </label>
+        </div>
+    </ons-page>
+</ons-navigator>

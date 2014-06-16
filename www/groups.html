@@ -1,0 +1,49 @@
+<style>
+.margin-little {
+    margin: 8px;
+}
+input {
+    padding:2px;
+}
+.float-left {
+    float: left;
+}
+.list-item-action {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    margin-top: -10px;
+    font-size: 20px;
+    line-height: 26px;
+    opacity: 0.4;
+}
+.list-item-action > fa {
+    font-size: 22px;
+}
+.list-top {
+    margin-top: -1px;
+}
+</style>
+<ons-page ng-controller="GroupsController" ng-init="init()">
+    <ons-navigator-toolbar title="Groups">
+    </ons-navigator-toolbar>
+    <ons-scroller>
+        <div class="margin-little">
+            <input type="search" ng-model="search" placeholder="keyword..." class="display-block search-input">
+        </div>
+        <hr>
+        <div class="list list-top">
+            <div ng-repeat="(key, data) in objs|filter:search">
+                <h3 class="list__header">{{key}}</h3>
+                <ul class="list__container">
+                    <li ng-repeat="group in data" class="list__item list__item--tappable list__item__line-height">
+                        <ons-row>
+                            <ons-col size="10"> <img ng-src="{{group.logo}}" width="60%"> </ons-col>
+                            <ons-col>{{group.name}}</ons-col>
+                        </ons-row>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </ons-scroller>
+</ons-page>

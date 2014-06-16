@@ -1,0 +1,46 @@
+<style>
+.margin-little {
+    margin: 8px;
+}
+input {
+    padding:2px;
+}
+</style>
+<ons-page ng-controller="ClubController" ng-init="init()">
+    <ons-navigator-toolbar title="Clubs">
+    </ons-navigator-toolbar>
+    <ons-scroller>
+        <div class="margin-little">
+            <input type="search" ng-model="search" placeholder="keyword..." class="display-block search-input">
+        </div>
+        <div class="list" style="overflow: auto">
+            <ul class="list__container">
+                <li ng-repeat="obj in objs|filter:search" class="list__item list__item--tappable list__item__line-height list-item-container">
+                    <div class="list-item-main">
+                        <div class="list-item-left">
+                            <img ng-src="{{obj.logo}}" class="thumbnail">
+                        </div>
+                        <div class="list-item-right">
+                            <div class="list-item-content">
+                                <span class="list-item-name">{{obj.name}} &nbsp;
+                                    <br/>
+                                    <span class="lucent">
+                                        <i class="fa fa-map-marker"></i>&nbsp; {{obj.country}} {{obj.address}}
+                                    </span>
+                                </span>
+                                <br/>
+                                <span class="list-item-text" style="margin-top:16px;">
+                                    {{obj.stadiumName}}
+                                    <br>{{obj.foundedYear}}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="list-item-action">
+                        <i class="fa fa-angle-right"></i>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </ons-scroller>
+</ons-page>
