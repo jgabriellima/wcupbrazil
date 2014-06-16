@@ -10,6 +10,7 @@ window.wc.controller('DumpController', ['$scope', '$http', '$webSql',
 
         $scope.init = function() {
             $scope.initdb();
+            // $scope.dropplayer();
             $scope.createTablePlayer();
             $scope.insertPlayer();
         }
@@ -17,6 +18,9 @@ window.wc.controller('DumpController', ['$scope', '$http', '$webSql',
         $scope.initdb = function() {
 
             $scope.db = $webSql.openDatabase('wcbrazil', '1.0', 'WcupBrazil', 2 * 1024 * 1024);
+        }
+        $scope.dropplayer = function(){
+            $scope.db.dropTable('player');
         }
         $scope.insertPlayer = function(players) {
 
@@ -48,7 +52,7 @@ window.wc.controller('DumpController', ['$scope', '$http', '$webSql',
                             weightKg: val.weightKg
                         },
                         function(results) {
-                            console.log(results.insertId);
+                            // console.log(results.insertId);
                         })
                 });
             });
