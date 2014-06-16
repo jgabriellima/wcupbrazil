@@ -1,4 +1,4 @@
 (function(){
 	'use strict';
-	window.wc = angular.module('WC', ['onsen.directives']);
+	window.wc = angular.module('WC', ['onsen.directives','angular-websql']);
 })();
