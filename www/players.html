@@ -6,16 +6,16 @@ input {
     padding:2px;
 }
 </style>
-<ons-page ng-controller="PlayerController" ng-init="init()">
+<ons-page ng-controller="PlayerController" ng-init="init();blockbackbuton();">
     <ons-navigator-toolbar title="Players">
     </ons-navigator-toolbar>
     <ons-scroller>
         <div class="margin-little">
             <input type="search" ng-model="search" placeholder="keyword..." class="display-block search-input">
         </div>
-        <div class="list">
+        <div id="list" style="height:480px;" class="list" when-scrolled="pagination()">
             <ul class="list__container">
-                <li ng-repeat="obj in objs|filter:search" class="list__item list__item--tappable list__item__line-height list-item-container">
+                <li ng-repeat="obj in objs|filter:search" class="list__item list__item--tappable list__item__line-height list-item-container" ng-click="select(obj.id)">
                     <div class="list-item-main">
                         <div class="list-item-left">
                             <img ng-src="{{obj.image}}" class="thumbnail">

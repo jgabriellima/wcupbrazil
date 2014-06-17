@@ -15,11 +15,13 @@
     <link rel="stylesheet" href="lib/onsen/css/topcoat-mobile-onsen-ios7.css">
     <link rel="stylesheet" href="assets/styles/app.css" />
 
+    <script src="lib/zepto.min.js"></script>
     <script src="lib/onsen/js/angular/angular.js"></script>
     <script src="lib/onsen/js/onsenui.js"></script>
     <script src="lib/underscore-min.js"></script>
     <script src="lib/angular-websql.min.js"></script>
     <script src="lib/fastclick.min.js"></script>
+    <script src="lib/ng-infinite-scroll.min.js"></script>
     <script src="assets/js/app.js"></script>
     <script src="assets/js/controllers/teams.js"></script>
     <script src="assets/js/controllers/players.js"></script>
@@ -36,9 +38,15 @@
 </head>
 
 <body>
-    <ons-screen page="menu.html"></ons-screen>
+    <ons-screen page="menu.html" ng-controller="DumpController" ng-init="init()"></ons-screen>
     <script type="text/javascript" src="phonegap.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    document.addEventListener("deviceready", onDeviceReady, false);
 
+    function onDeviceReady() {
+        navigator.splashscreen.show();
+    }
+    </script>
 </body>
 
 </html>

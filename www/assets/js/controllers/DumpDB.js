@@ -11,15 +11,20 @@ window.wc.controller('DumpController', ['$scope', '$http', '$webSql',
         $scope.init = function() {
             $scope.initdb();
             // $scope.dropplayer();
-            $scope.createTablePlayer();
-            $scope.insertPlayer();
+            if (window.localStorage.getItem("wcupbrazil_playerDB") === null) {
+                console.log('DUMP OK');
+                $scope.createTablePlayer();
+                $scope.insertPlayer();
+                window.localStorage.setItem("wcupbrazil_playerDB", true);
+            }
+
         }
 
         $scope.initdb = function() {
 
-            $scope.db = $webSql.openDatabase('wcbrazil', '1.0', 'WcupBrazil', 2 * 1024 * 1024);
+            $scope.db = $webSql.openDatabase('wcbrazil2', '1.0', 'WcupBrazil', 2 * 1024 * 1024);
         }
-        $scope.dropplayer = function(){
+        $scope.dropplayer = function() {
             $scope.db.dropTable('player');
         }
         $scope.insertPlayer = function(players) {

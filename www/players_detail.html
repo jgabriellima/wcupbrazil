@@ -1,0 +1,139 @@
+<style>
+.profile-main {
+    /*position: relative;*/
+    height: 100%;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+.header-menu-bar {
+    position: absolute;
+    top: -1px;
+}
+.profile-image-frame {
+    display: box;
+    display: -ms-box;
+    display: -moz-box;
+    display: -o-box;
+    display: -webkit-box;
+    box-align: center;
+    -ms-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -webkit-box-align: center;
+    box-pack: center;
+    -ms-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -webkit-box-pack: center;
+    position: absolute;
+    top: 28%;
+    left: 5%;
+    height: 108px;
+    width: 108px;
+    border: 1px solid #CECECE;
+    box-shadow: 1px 1px 3px solid #CCCCCC;
+    -webkit-box-shadow: 1px 1px 3px solid #CCCCCC;
+    background: #FEFEFE;
+    text-align: center;
+}
+.profile-image-frame img {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    padding-top: 4px;
+}
+.image-title {
+    opacity: 0.4;
+    margin: 3% 0 8% 42%;
+}
+.box-for-3-items {
+    text-align: center;
+    padding: 4px 0 8px 0;
+}
+.box-for-3-items button {
+    width: 90px;
+    height: 28px;
+    line-height: 18px;
+}
+.box-for-3-items img {
+    display: inline-block;
+    width: 90px;
+    margin: 0 auto 0 auto;
+}
+.profile-description-text {
+    width: 80%;
+    margin: 12px auto 12px auto;
+    opacity: 0.5;
+}
+</style>
+<ons-page ng-controller="PlayerController" ng-init="get();blockbackbuton();">
+    <ons-navigator-toolbar title="Players">
+    </ons-navigator-toolbar>
+    <ons-scroller>
+
+        <div class="navigation-bar">
+            <div class="navigation-bar__left">
+                <span class="icon-button--quiet navigation-bar__line-height">
+                    <i class="fa fa-angle-left"></i>&nbsp;Back
+                </span>
+            </div>
+            <div class="navigation-bar__center">
+                <span class="navigation-bar__title">Profile</span>
+            </div>
+            <div class="navigation-bar__right">
+                <span class="icon-button--quiet navigation-bar__line-height">
+                    <i class="fa fa-external-link"></i>
+                </span>
+            </div>
+        </div>
+        <div class="profile-main">
+            <div class="tab-bar header-menu-bar">
+                <label class="tab-bar__item">
+                    <input type="radio" name="tab-bar-c">
+                    <button class="tab-bar__button">
+                        <i class="tab-bar__icon fa fa-2x fa-credit-card"></i>
+                    </button>
+                </label>
+                <label class="tab-bar__item">
+                    <input type="radio" name="tab-bar-c">
+                    <button class="tab-bar__button">
+                        <i class="tab-bar__icon fa fa-2x fa-users"></i>
+                    </button>
+                </label>
+                <label class="tab-bar__item">
+                    <input type="radio" name="tab-bar-c">
+                    <button class="tab-bar__button">
+                        <i class="tab-bar__icon fa fa-2x fa-comment"></i>
+                    </button>
+                </label>
+                <label class="tab-bar__item">
+                    <input type="radio" name="tab-bar-c">
+                    <button class="tab-bar__button">
+                        <i class="tab-bar__icon fa fa-globe"></i>
+                    </button>
+                </label>
+                <label class="tab-bar__item">
+                    <input type="radio" name="tab-bar-c" checked="checked">
+                    <button class="tab-bar__button">
+                        <i class="tab-bar__icon fa fa-2x fa-bars"></i>
+                    </button>
+                </label>
+            </div>
+            <img src="uyuni_main.jpg" height="40%" width="100%">
+            <div class="profile-image-frame">
+                <img ng-src="{{player.image}}">
+            </div>
+            <div class="image-title">
+                <span>{{player.firstName}}</span>
+            </div>
+
+            <div class="profile-description-text">
+                <i class="fa fa-location-arrow"></i>&nbsp;Salar de Uyuni
+            </div>
+            <div class="profile-description-text">
+                <i class="fa fa-flickr"></i>&nbsp;Estado Plurinacional de Bolivia
+            </div>
+        </div>
+
+    </ons-scroller>
+</ons-page>
